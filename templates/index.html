@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mark Normalizer</title></head>
+<body>
+<h2>Select Mode and Enter Marks</h2>
+<form method="POST" action="/result">
+    <label>Mode:</label>
+    <select name="mode">
+        <option value="hybrid">Hybrid</option>
+        <option value="theory">Theory</option>
+    </select><br><br>
+
+    <label>Attendance (%):</label><input type="number" name="attendance"><br>
+
+    <h3>Common</h3>
+    MST-1: <input type="number" name="mst1"><br>
+    MST-2: <input type="number" name="mst2"><br>
+    Surprise Test: <input type="number" name="surprise"><br>
+
+    <h3>Hybrid Only</h3>
+    Quiz: <input type="number" name="quiz"><br>
+    Assignment: <input type="number" name="assignment"><br>
+    Practical MST: <input type="number" name="practical"><br>
+    {% for i in range(1, 11) %}
+        Experiment {{ i }}: <input type="number" name="exp{{i}}"><br>
+    {% endfor %}
+
+    <br><button type="submit">Calculate</button>
+</form>
+</body>
+</html>
