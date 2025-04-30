@@ -1,31 +1,69 @@
 <!DOCTYPE html>
-<html>
-<head><title>Mark Normalizer</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculation</title>
+    <script>
+        function toggleFields() {
+            var mode = document.getElementById("mode").value;
+            if (mode == "hybrid") {
+                document.getElementById("hybridFields").style.display = "block";
+                document.getElementById("theoryFields").style.display = "none";
+            } else if (mode == "theory") {
+                document.getElementById("theoryFields").style.display = "block";
+                document.getElementById("hybridFields").style.display = "none";
+            }
+        }
+    </script>
+</head>
 <body>
-<h2>Select Mode and Enter Marks</h2>
-<form method="POST" action="/result">
-    <label>Mode:</label>
-    <select name="mode">
-        <option value="hybrid">Hybrid</option>
-        <option value="theory">Theory</option>
-    </select><br><br>
+    <h1>Enter Your Marks</h1>
+    <form action="/result" method="POST">
+        <!-- Mode selection -->
+        <label for="mode">Choose Mode:</label>
+        <select name="mode" id="mode" onchange="toggleFields()">
+            <option value="hybrid">Hybrid</option>
+            <option value="theory">Theory</option>
+        </select>
 
-    <label>Attendance (%):</label><input type="number" name="attendance"><br>
+        <!-- Hybrid Fields -->
+        <div id="hybridFields">
+            <label for="mst1">MST 1:</label>
+            <input type="number" step="0.01" name="mst1"><br>
+            <label for="mst2">MST 2:</label>
+            <input type="number" step="0.01" name="mst2"><br>
+            <label for="practical">Practical:</label>
+            <input type="number" step="0.01" name="practical"><br>
+            <label for="quiz">Quiz:</label>
+            <input type="number" step="0.01" name="quiz"><br>
+            <label for="assignment">Assignment:</label>
+            <input type="number" step="0.01" name="assignment"><br>
+            <label for="surprise">Surprise Test:</label>
+            <input type="number" step="0.01" name="surprise"><br>
+            <!-- Experiment fields -->
+            <label for="exp1">Experiment 1:</label>
+            <input type="number" step="0.01" name="exp1"><br>
+            <label for="exp2">Experiment 2:</label>
+            <input type="number" step="0.01" name="exp2"><br>
+            <!-- Continue for all 10 experiments -->
+        </div>
 
-    <h3>Common</h3>
-    MST-1: <input type="number" name="mst1"><br>
-    MST-2: <input type="number" name="mst2"><br>
-    Surprise Test: <input type="number" name="surprise"><br>
+        <!-- Theory Fields -->
+        <div id="theoryFields" style="display: none;">
+            <label for="mst1">MST 1:</label>
+            <input type="number" step="0.01" name="mst1"><br>
+            <label for="mst2">MST 2:</label>
+            <input type="number" step="0.01" name="mst2"><br>
+            <label for="surprise">Surprise Test:</label>
+            <input type="number" step="0.01" name="surprise"><br>
+        </div>
 
-    <h3>Hybrid Only</h3>
-    Quiz: <input type="number" name="quiz"><br>
-    Assignment: <input type="number" name="assignment"><br>
-    Practical MST: <input type="number" name="practical"><br>
-    {% for i in range(1, 11) %}
-        Experiment {{ i }}: <input type="number" name="exp{{i}}"><br>
-    {% endfor %}
+        <!-- Common Fields -->
+        <label for="attendance">Attendance (%):</label>
+        <input type="number" name="attendance" step="0.01"><br>
 
-    <br><button type="submit">Calculate</button>
-</form>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
