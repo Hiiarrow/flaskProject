@@ -26,7 +26,7 @@ def result():
         practical = safe_float(request.form.get('practical')) / 2
         quiz = safe_float(request.form.get('quiz')) / 2
         assignment = safe_float(request.form.get('assignment')) / 2
-        surprise = safe_float(request.form.get('surprise')) / 3
+        surprise = safe_float(request.form.get('surprise')) / 6
         experiments = sum(safe_float(request.form.get(f'exp{i}')) / 12 for i in range(1, 11))
         total = round(mst1 + mst2 + practical + quiz + assignment + surprise + experiments + attendance_bonus / 2, 2)
         return render_template("result.html", total=total, mode="Hybrid")
