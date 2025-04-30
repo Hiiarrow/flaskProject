@@ -43,7 +43,7 @@ def result():
         surprise = float(request.form['t_surprise']) / 3
 
         # Calculate the Total for Theory Mode
-        total = round(mst1 + mst2 + quiz + assignment + surprise + normalized_attendance, 2)
+        total = round(mst1 + mst2 + quiz + assignment + surprise + normalized_attendance*2, 2)
 
         return render_template("result.html", total=total, mode="Theory")
 
