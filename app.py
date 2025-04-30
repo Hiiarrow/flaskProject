@@ -26,8 +26,10 @@ def result():
     elif mode == "theory":
         mst1 = float(request.form['mst1']) / 2
         mst2 = float(request.form['mst2']) / 2
+        quiz = float(request.form['quiz']) 
+        assignment = float(request.form['assignment']) 
         surprise = float(request.form['surprise']) / 3
-        total = round(mst1 + mst2 + surprise + attendance_bonus / 2, 2)
+        total = round(mst1 + mst2 + surprise + attendance_bonus + quiz +assignment, 2)
         return render_template("result.html", total=total, mode="Theory")
 
     return "Invalid input"
