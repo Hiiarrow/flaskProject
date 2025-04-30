@@ -29,58 +29,68 @@
 
         <!-- Hybrid Fields -->
         <div id="hybridFields">
-            <label for="mst1">MST 1:</label>
-            <input type="number" step="0.01" name="mst1"><br>
-            <label for="mst2">MST 2:</label>
-            <input type="number" step="0.01" name="mst2"><br>
+            <label for="hybrid_mst1">MST 1:</label>
+            <input type="number" step="any" name="hybrid_mst1" required><br>
+
+            <label for="hybrid_mst2">MST 2:</label>
+            <input type="number" step="any" name="hybrid_mst2" required><br>
+
             <label for="practical">Practical:</label>
-            <input type="number" step="0.01" name="practical"><br>
-            <label for="quiz">Quiz:</label>
-            <input type="number" step="0.01" name="quiz"><br>
-            <label for="assignment">Assignment:</label>
-            <input type="number" step="0.01" name="assignment"><br>
-            <label for="surprise">Surprise Test:</label>
-            <input type="number" step="0.01" name="surprise"><br>
+            <input type="number" step="any" name="practical" required><br>
+
+            <label for="hybrid_quiz">Quiz:</label>
+            <input type="number" step="any" name="hybrid_quiz" required><br>
+
+            <label for="hybrid_assignment">Assignment:</label>
+            <input type="number" step="any" name="hybrid_assignment" required><br>
+
+            <label for="hybrid_surprise">Surprise Test:</label>
+            <input type="number" step="any" name="hybrid_surprise" required><br>
+
             <!-- Experiment fields -->
             <label for="exp1">Experiment 1:</label>
-            <input type="number" step="1" name="exp1"><br>
+            <input type="number" step="any" name="exp1" required><br>
             <label for="exp2">Experiment 2:</label>
-            <input type="number" step="1" name="exp2"><br>
-            <label for="exp1">Experiment 3:</label>
-            <input type="number" step="1" name="exp3"><br>
-            <label for="exp2">Experiment 4:</label>
-            <input type="number" step="0.01" name="exp4"><br>
-            <label for="exp1">Experiment 5:</label>
-            <input type="number" step="0.01" name="exp5"><br>
-            <label for="exp2">Experiment 6:</label>
-            <input type="number" step="0.01" name="exp6"><br>
-            <label for="exp1">Experiment 7:</label>
-            <input type="number" step="0.01" name="exp7"><br>
-            <label for="exp2">Experiment 8:</label>
-            <input type="number" step="0.01" name="exp8"><br>
-            <label for="exp2">Experiment 9:</label>
-            <input type="number" step="0.01" name="exp9"><br>
-            <label for="exp2">Experiment 10:</label>
-            <input type="number" step="0.01" name="exp10"><br>
+            <input type="number" step="any" name="exp2" required><br>
+            <label for="exp3">Experiment 3:</label>
+            <input type="number" step="any" name="exp3" required><br>
+            <label for="exp4">Experiment 4:</label>
+            <input type="number" step="any" name="exp4" required><br>
+            <label for="exp5">Experiment 5:</label>
+            <input type="number" step="any" name="exp5" required><br>
+            <label for="exp6">Experiment 6:</label>
+            <input type="number" step="any" name="exp6" required><br>
+            <label for="exp7">Experiment 7:</label>
+            <input type="number" step="any" name="exp7" required><br>
+            <label for="exp8">Experiment 8:</label>
+            <input type="number" step="any" name="exp8" required><br>
+            <label for="exp9">Experiment 9:</label>
+            <input type="number" step="any" name="exp9" required><br>
+            <label for="exp10">Experiment 10:</label>
+            <input type="number" step="any" name="exp10" required><br>
         </div>
 
         <!-- Theory Fields -->
         <div id="theoryFields" style="display: none;">
-            <label for="mst1">MST 1:</label>
-            <input type="number" name="mst1" required><br>
-            <label for="mst2">MST 2:</label>
-            <input type="number" step="0.01" name="mst2"><br>
-            <label for="quiz">Quiz:</label>
-            <input type="number" step="0.01" name="quiz"><br>
-            <label for="assignment">Assignment:</label>
-            <input type="number" step="0.01" name="assignment"><br>
-            <label for="surprise">Surprise Test:</label>
-            <input type="number" step="0.01" name="surprise"><br>
+            <label for="theory_mst1">MST 1:</label>
+            <input type="number" step="any" name="theory_mst1" required><br>
+
+            <label for="theory_mst2">MST 2:</label>
+            <input type="number" step="any" name="theory_mst2" required><br>
+
+            <label for="theory_quiz">Quiz:</label>
+            <input type="number" step="any" name="theory_quiz" required><br>
+
+            <label for="theory_assignment">Assignment:</label>
+            <input type="number" step="any" name="theory_assignment" required><br>
+
+            <label for="theory_surprise">Surprise Test:</label>
+            <input type="number" step="any" name="theory_surprise" required><br>
         </div>
 
         <!-- Common Fields -->
         <label for="attendance">Attendance (%):</label>
-        <input type="number" name="attendance" step="0.01"><br>
+        <input type="number" step="any" name="attendance" required><br>
 
         <button type="submit">Submit</button>
     </form>
